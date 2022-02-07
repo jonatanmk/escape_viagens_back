@@ -7,6 +7,7 @@ public class Destino {
 	private String cidade;
 	private String uf;
 	private String pais;
+	
 	public int getIdDestino() {
 		return idDestino;
 	}
@@ -37,6 +38,7 @@ public class Destino {
 	public void setPais(String pais) {
 		this.pais = pais;
 	}
+	
 	@Override
 	public String toString() {
 		return "Destino [idDestino=" + idDestino + ", destino=" + destino + ", cidade=" + cidade + ", uf=" + uf

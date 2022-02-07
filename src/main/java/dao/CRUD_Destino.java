@@ -12,5 +12,4 @@ public interface CRUD_Destino {
 	public static Destino findByPK(int destinoId) {return null;};
 	public static void update(Destino destino) {};
 
-
 }

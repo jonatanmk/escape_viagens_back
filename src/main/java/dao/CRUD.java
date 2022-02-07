@@ -11,4 +11,5 @@ public interface CRUD {
 	public static List<Cliente> find(String pesquisa){return null;}
 	public static Cliente findByPk(int clienteId) {return null;}
 	public static void update(Cliente cliente) {}
+	
 }
