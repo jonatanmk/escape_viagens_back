@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c'%>
 
 <!DOCTYPE html>
@@ -7,6 +8,7 @@
 <meta charset="ISO-8859-1">
 <title>Atualizar Destino</title>
 <!-- CSS only -->
+<link rel="stylesheet" href="./index.css" />
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -15,30 +17,17 @@
 </head>
 <body>
 
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<div class="container-fluid">
-			<a class="navbar-brand" href="#">Navbar</a>
-			<button class="navbar-toggler" type="button"
-				data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-				aria-controls="navbarSupportedContent" aria-expanded="false"
-				aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="destino.html">Home</a></li>
-					<li class="nav-item"><a class="nav-link" href="CreateAndFindDestino">Lista de
-							Destinos</a></li>
-				</ul>
-				<form action="CreateAndFindDestino" method="GET" class="d-flex">
-					<input name="pesquisa" class="form-control me-2" type="search"
-						placeholder="Pesquisar..." aria-label="Search">
-					<button class="btn btn-outline-success" type="submit">Buscar</button>
-				</form>
-			</div>
-		</div>
-	</nav>
+	<header>
+		<nav class="menu">
+			<img src="./img/logo.png" />
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="index.html">Destinos</a></li>
+				<li><a href="index.html">Promoções</a></li>
+				<li><a href="index.html">Contato</a></li>
+			</ul>
+		</nav>
+	</header>
 
 	<br>
 
@@ -53,16 +42,15 @@
 						style="visibility: hidden">
 					<div class="form-floating mb-3">
 						<input value="${destino.destino}" name="destino" maxlength="40"
-							type="text" class="form-control" id="floatingInput1"> 
-							<label>Destino</label>
+							type="text" class="form-control" id="floatingInput1"> <label>Destino</label>
 					</div>
 					<div class="form-floating mb-3">
 						<input value="${destino.cidade}" name="cidade" maxlength="11"
 							type="text" class="form-control"> <label>Cidade</label>
 					</div>
 					<div class="form-floating mb-3">
-						<input value="${destino.uf}" name="uf" maxlength="11"
-							type="text" class="form-control"> <label>UF</label>
+						<input value="${destino.uf}" name="uf" maxlength="11" type="text"
+							class="form-control"> <label>UF</label>
 					</div>
 					<div class="form-floating mb-3">
 						<input value="${destino.pais}" name="pais" maxlength="11"
@@ -78,6 +66,38 @@
 			</div>
 		</div>
 	</div>
+
+	<footer class="text-center text-black">
+		<div class="fundo p-1 pb-0 mt-5">
+			<section>
+				<!-- Facebook -->
+				<a class="footer1 btn"
+					href="https://www.facebook.com/jonatan.vasconcelos"> <img
+					src="./img/facebook.png">
+				</a>
+				<!-- YouTube -->
+				<a class="footer1 btn" href="https://youtube.com/user/jonatanmk">
+					<img src="./img/youtube.png">
+				</a>
+				<!-- Instagram -->
+				<a class="footer1 btn"
+					href="https://www.instagram.com/jonatanvs?r=nametag"> <img
+					src="./img/instagram.png">
+				</a>
+				<!-- Linkedin -->
+				<a class="footer1 btn"
+					href="https://www.linkedin.com/in/jonatan-vasconcelos-08bb29171">
+					<img src="./img/linkedin.png">
+				</a>
+				<!-- Github -->
+				<a class="footer1 btn" href="https://github.com/jonatanmk"
+					role="button"> <img src="./img/github.png">
+				</a>
+			</section>
+		</div>
+		<div class="fundo text-center p-3">© 2021 Jonatan Vasconcelos
+			Soares</div>
+	</footer>
 
 	<!-- JavaScript Bundle with Popper -->
 	<script

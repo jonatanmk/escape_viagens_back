@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
-<%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c' %>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c'%>
 
 <!DOCTYPE html>
 <html>
@@ -7,6 +8,7 @@
 <meta charset="ISO-8859-1">
 <title>Lista de Reservas</title>
 <!-- CSS only -->
+<link rel="stylesheet" href="./index.css" />
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -15,30 +17,17 @@
 </head>
 <body>
 
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<div class="container-fluid">
-			<a class="navbar-brand" href="#">Navbar</a>
-			<button class="navbar-toggler" type="button"
-				data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-				aria-controls="navbarSupportedContent" aria-expanded="false"
-				aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="reserva.html">Home</a></li>
-					<li class="nav-item"><a class="nav-link" href="CreateAndFindReserva">Lista de
-							Reservas</a></li>
-				</ul>
-				<form action="CreateAndFindReserva" method="GET" class="d-flex">
-					<input name="pesquisa" class="form-control me-2" type="search"
-						placeholder="Pesquisar..." aria-label="Search">
-					<button class="btn btn-outline-success" type="submit">Buscar</button>
-				</form>
-			</div>
-		</div>
-	</nav>
+	<header>
+		<nav class="menu">
+			<img src="./img/logo.png" />
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="index.html">Destinos</a></li>
+				<li><a href="index.html">Promoções</a></li>
+				<li><a href="index.html">Contato</a></li>
+			</ul>
+		</nav>
+	</header>
 
 	<br>
 
@@ -49,21 +38,21 @@
 				<h3>Reservas Cadastrados</h3>
 				<hr>
 				<table class="table">
-				<thead>
-					<tr>
-						<th>#</th>
-						<th>Nome</th>
-						<th>CPF</th>
-						<th>Id Destino</th>
-						<th>Destino</th>
-						<th>Dias de reserva</th>
-						<th>Data da reserva</th>
-					</tr>
-				</thead>
-				<tbody>
-				<c:forEach items="${reservas}" var="reserva">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>Nome</th>
+							<th>CPF</th>
+							<th>Id Destino</th>
+							<th>Destino</th>
+							<th>Dias de reserva</th>
+							<th>Data da reserva</th>
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach items="${reservas}" var="reserva">
 							<tr>
-								
+
 								<td>${reserva.id}</td>
 								<td>${reserva.nome}</td>
 								<td>${reserva.cpf}</td>
@@ -71,26 +60,62 @@
 								<td>${reserva.destino}</td>
 								<td>${reserva.diasReserva}</td>
 								<td>${reserva.dataReserva}</td>
-								<td>
-									<a href="ReservaDestroy?reservaId=${reserva.id}">deletar</a> |
-									<a href="ReservaUpdate?reservaId=${reserva.id}">atualizar</a>
+								<td><a href="ReservaDestroy?reservaId=${reserva.id}">deletar</a>
+									| <a href="ReservaUpdate?reservaId=${reserva.id}">atualizar</a>
 								</td>
 							</tr>
 						</c:forEach>
-				</tbody>
-			</table>
-			<br>
-			<h5><a href="reserva.html">Voltar para o Cadastro de Reservas</a></h5>
-				
+					</tbody>
+				</table>
+				<br>
+				<h5>
+					<a href="reserva.html">Voltar para o Cadastro de Reservas</a>
+				</h5>
+
 			</div>
 		</div>
 	</div>
+	
+	<br><br><br><br><br><br><br><br><br>
+	
+	<footer class="text-center text-black">
+		<div class="fundo p-1 pb-0 mt-5">
+			<section>
+				<!-- Facebook -->
+				<a class="footer1 btn"
+					href="https://www.facebook.com/jonatan.vasconcelos"> <img
+					src="./img/facebook.png">
+				</a>
+				<!-- YouTube -->
+				<a class="footer1 btn" href="https://youtube.com/user/jonatanmk">
+					<img src="./img/youtube.png">
+				</a>
+				<!-- Instagram -->
+				<a class="footer1 btn"
+					href="https://www.instagram.com/jonatanvs?r=nametag"> <img
+					src="./img/instagram.png">
+				</a>
+				<!-- Linkedin -->
+				<a class="footer1 btn"
+					href="https://www.linkedin.com/in/jonatan-vasconcelos-08bb29171">
+					<img src="./img/linkedin.png">
+				</a>
+				<!-- Github -->
+				<a class="footer1 btn" href="https://github.com/jonatanmk"
+					role="button"> <img src="./img/github.png">
+				</a>
+			</section>
+		</div>
+		<div class="fundo text-center p-3">© 2021 Jonatan Vasconcelos
+			Soares</div>
+	</footer>
 
 	<!-- JavaScript Bundle with Popper -->
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
 		crossorigin="anonymous">
+		
 	</script>
 </body>
 </html>
